@@ -1,0 +1,29 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: 'https://github.com', label: 'GitHub' },
+  { href: 'https://x.com', label: 'X' },
+  { href: '/rss.xml', label: 'RSS' },
+];
+---
+
+<footer class="mt-24 pt-6 border-t border-[var(--color-border)]">
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-text-tertiary)]">
+    <span>&copy; {year} Aditya Viki</span>
+    <nav class="flex items-center gap-1">
+      {links.map((link, i) => (
+        <>
+          <a
+            href={link.href}
+            class="link-hover px-1 py-0.5 text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)] transition-colors duration-200"
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {link.label}
+          </a>
+          {i < links.length - 1 && <span class="text-[var(--color-border)]">/</span>}
+        </>
+      ))}
+    </nav>
+  </div>
+</footer>
