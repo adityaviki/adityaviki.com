@@ -40,7 +40,9 @@ const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
       <div class="space-y-3">
         {projects.map(project => (
           <a
-            href={`/projects/${project.id}`}
+            href={project.data.url || project.data.github || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
             class="group block p-4 -mx-4 rounded-lg hover:bg-[var(--color-bg-secondary)] transition-all duration-200"
           >
             <div class="flex items-start justify-between gap-4">
