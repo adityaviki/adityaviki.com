@@ -19,10 +19,8 @@ const projects = (await getCollection('projects'))
   <div class="space-y-4 animate-in animate-in-delay-1">
     {projects.map(project => (
       <a
-        href={project.data.url || project.data.github || `/projects/${project.id}`}
+        href={`/projects/${project.id}`}
         class="group block p-5 -mx-5 rounded-xl border border-transparent hover:border-[var(--color-border)] hover:bg-[var(--color-bg-secondary)] transition-all duration-200"
-        target={project.data.url || project.data.github ? '_blank' : undefined}
-        rel={project.data.url || project.data.github ? 'noopener noreferrer' : undefined}
       >
         <div class="flex items-start justify-between gap-4">
           <div class="min-w-0">
