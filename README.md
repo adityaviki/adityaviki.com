@@ -5,7 +5,7 @@ My personal website. Built with [Astro](https://astro.build) and [Tailwind CSS](
 ## Features
 
 - Blog with Markdown/MDX support
-- Projects showcase
+- Project pages with Mermaid diagrams and image galleries
 - Dark/light mode (toggle or press `d`)
 - Minimal, content-focused design
 - Fully static, fast by default
@@ -21,10 +21,12 @@ Open [localhost:4321](http://localhost:4321) to view the site.
 
 ## Adding content
 
-Create Markdown files in `src/content/`:
+Create Markdown or MDX files in `src/content/`:
 
-- `src/content/blog/` — Blog posts
-- `src/content/projects/` — Project entries
+- `src/content/blog/` — Blog posts (`.md` or `.mdx`)
+- `src/content/projects/` — Project entries (`.md` or `.mdx`)
+
+Project images go in `public/images/<project-name>/`.
 
 See `src/content.config.ts` for the frontmatter schema.
 
